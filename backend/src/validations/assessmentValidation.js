@@ -6,7 +6,7 @@ export const assessmentValidation = [
   body('subject_id').isInt().withMessage('Subject ID is required'),
   body('class_id').isInt().withMessage('Class ID is required'),
   body('total_marks').isInt({ min: 1 }).withMessage('Total marks must be at least 1'),
-  body('date').isISO8601().withMessage('Valid date is required'),
+  body('scheduled_date').isISO8601().withMessage('Valid scheduled date is required'),
 ];
 
 export const resultValidation = [

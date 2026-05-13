@@ -22,6 +22,7 @@ import notificationRoutes from './routes/notificationRoutes.js';
 import grievanceRoutes from './routes/grievanceRoutes.js';
 import materialRoutes from './routes/materialRoutes.js';
 import subjectRoutes from './routes/subjectRoutes.js';
+import creatorStudioRoutes from './routes/creatorStudioRoutes.js';
 import swaggerUi from 'swagger-ui-express';
 import specs from './config/swagger.js';
 
@@ -48,6 +49,11 @@ const limiter = rateLimit({
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
+
+app.use(
+  '/api/v1/creator-studio',
+  creatorStudioRoutes
+);
 
 // Static Files
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
